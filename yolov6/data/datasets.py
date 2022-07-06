@@ -423,7 +423,7 @@ class TrainValDataset(Dataset):
             im = Image.open(im_file)
             #im.verify()  # PIL verify
             shape = im.size  # (width, height)
-            im_exif = im._getexif()
+            im_exif = False
             if im_exif and ORIENTATION in im_exif:
                 rotation = im_exif[ORIENTATION]
                 if rotation in (6, 8):
